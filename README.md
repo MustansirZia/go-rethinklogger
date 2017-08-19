@@ -37,6 +37,8 @@ govendor fetch github.com/mustansirzia/go-rethinklogger
     // as arguments. Don't worry though, admin user is only
     // used to create the database and a user.
     rethinklogger.Start("localhost:28015", "adminPassword")
+    fmt.Fprintln(os.Stdout, "Sample stdio log!")
+    fmt.Fprintln(os.Stderr, "Sample stderr log!")
 
     ...
     ...
@@ -52,7 +54,12 @@ govendor fetch github.com/mustansirzia/go-rethinklogger
 
         /*
             log {
-                Log = "Sample log"
+                Log = "Sample stdio log!"
+                CreatedAtHuman = "17 Aug 17 15:04 +530"
+                CreatedAt = 1503162020
+            }
+            log {
+                Log = "Sample stderr log!"
                 CreatedAtHuman = "17 Aug 17 15:04 +530"
                 CreatedAt = 1503162020
             }
