@@ -32,7 +32,9 @@ func Start(dbAddress, adminPassword string) error {
 	writer := &rethinkWriter{
 		session: session,
 		db:      r.DB(DB_NAME).Table(DB_TABLE),
-		bufferSize: 5,
+		// Let's persist when there is at least a single log in the buffer.
+		bufferSize: 1,
+		// Keep persisting logs at 5 second intervals.
 		flushInterval: 5 * time.Second,
 		buffer: make([]RethinkLog, 0),
 	}
