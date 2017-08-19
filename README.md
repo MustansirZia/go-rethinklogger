@@ -30,10 +30,17 @@ govendor fetch github.com/mustansirzia/go-rethinklogger
 
 ```go
 
+
+
     // Start persisting logs. Call preferably from init.
-    rethinklogger.Start("localhost:28015", "")
+    // Start takes a rethinkDB address and the admin password
+    // as arguments. Don't worry though, admin user is only
+    // used to create the database and a user.
+    rethinklogger.Start("localhost:28015", "adminPassword")
+
     ...
     ...
+
     // Query logs from anywhere in your application.
     previousDay := time.Now().Add(0, 0, -1)
     now := time.Now()
@@ -52,6 +59,7 @@ govendor fetch github.com/mustansirzia/go-rethinklogger
         */
 
     }
+
 
 
 ```
