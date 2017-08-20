@@ -49,7 +49,7 @@ func (writer *rethinkWriter) Write(p []byte) (n int, err error) {
 }
 
 func (writer *rethinkWriter) dump() {
-	if len(writer.buffer) > writer.bufferSize {
+	if len(writer.buffer) >= writer.bufferSize {
 		writer.db.Insert(writer.buffer).RunWrite(writer.session)
 		writer.Lock()
 		writer.buffer = make([]RethinkLog, 0)
