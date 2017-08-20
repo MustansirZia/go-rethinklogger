@@ -64,7 +64,7 @@ func (writer *rethinkWriter) start() {
 	}
 }
 
-// Only exported function apart from Start(). Used to Query past logs.
+// Only exported function apart from Start() and StartWithBuffer(). Used to Query past logs.
 func QueryLogs(dbAddress string, from, to time.Time) ([]RethinkLog, error) {
 	session, err := r.Connect(r.ConnectOpts{
 		Address:  dbAddress,

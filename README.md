@@ -8,6 +8,8 @@
 • It works and is compatible with literally all types of loggers. The API is exceptionally simple and you just need to do normal logging, 
 it automatically reads from `stdio` and `stderr`, persists logs for later use and echoes the same back to their respective streams.
 
+<br />
+
 ## Installation.
 
 • Using Go.
@@ -26,6 +28,8 @@ glide up
 govendor fetch github.com/mustansirzia/go-rethinklogger
 ```
 
+<br />
+
 ## Usage.
 
 ```go
@@ -37,6 +41,7 @@ govendor fetch github.com/mustansirzia/go-rethinklogger
     // as arguments. Don't worry though, admin user is only
     // used to create the database and a user.
     rethinklogger.Start("localhost:28015", "adminPassword")
+
     fmt.Fprintln(os.Stdout, "Sample stdio log!")
     fmt.Fprintln(os.Stderr, "Sample stderr log!")
 
@@ -71,5 +76,28 @@ govendor fetch github.com/mustansirzia/go-rethinklogger
 
 ```
 
+<br />
 
-## Sidenotes.
+### Sidenotes.
+
+• This library is built over [go-shipit](https://github.com/segmentio/go-shipit) which dispatches std logs to a `io.Writer` interface. This library is basically a writer for shipit.
+<br />
+<br />
+• To avoid our database from getting overwhelmed by logs, logs are first accumulated inside a buffer and then dispatched at an interval of 5 secs.
+<br />
+<br />
+• Logging can also be started using  `StartWithBuffer` function which takes an additional buffer size argument. This is the minimum number of logs that must be accumulated inside the buffer before all the logs are dispatched to Rethink.
+By default the value is `1`.
+
+<br />
+
+### Inspiration.
+=> <b>go-loggly</b> - https://github.com/segmentio/go-loggly
+<br />
+<br />
+=> <b>Winston for nodejs</b> - https://github.com/winstonjs/winston
+
+<br />
+
+### License.
+See [License](https://github.com/MustansirZia/go-rethinklogger/blob/master/LICENSE.txt).

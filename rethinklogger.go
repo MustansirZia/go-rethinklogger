@@ -25,6 +25,11 @@ const (
 
 // Clients call this to start the persisting of logs.
 func Start(dbAddress, adminPassword string) error {
+	return StartWithBuffer(dbAddress, adminPassword, 1)
+}
+
+
+func StartWithBuffer(dbAddress, adminPassword string, bufferSize int) error {
 	session, err := createSession(dbAddress, adminPassword)
 	if err != nil {
 		return err
@@ -33,7 +38,7 @@ func Start(dbAddress, adminPassword string) error {
 		session: session,
 		db:      r.DB(DB_NAME).Table(DB_TABLE),
 		// Let's persist when there is at least a single log in the buffer.
-		bufferSize: 1,
+		bufferSize: bufferSize,
 		// Keep persisting logs at 5 second intervals.
 		flushInterval: 5 * time.Second,
 		buffer: make([]RethinkLog, 0),
