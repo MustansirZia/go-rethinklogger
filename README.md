@@ -14,18 +14,18 @@ it automatically reads from `stdio` and `stderr`, persists logs for later use an
 
 • Using Go.
 ```
-go get github.com/mustansirzia/go-rethinklogger
+go get github.com/MustansirZia/go-rethinklogger
 ```
 
 • Using Glide.
 ```
-glide get github.com/mustansirzia/go-rethinklogger
+glide get github.com/MustansirZia/go-rethinklogger
 glide up
 ```
 
 • Using go-vendor.
 ```
-govendor fetch github.com/mustansirzia/go-rethinklogger
+govendor fetch github.com/MustansirZia/go-rethinklogger
 ```
 
 <br />
