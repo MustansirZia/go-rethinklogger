@@ -42,7 +42,7 @@ govendor fetch github.com/MustansirZia/go-rethinklogger
     // Start takes a rethinkDB address and the admin password
     // as arguments. Don't worry though, admin user is only
     // used to create the database and a user.
-    
+
     rethinklogger.Start("localhost:28015", "adminPassword")
 
     fmt.Fprintln(os.Stdout, "Sample stdio log!")
