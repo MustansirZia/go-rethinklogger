@@ -2,6 +2,8 @@
 
 #### go-rethinklogger persists all your logs from `stdio` and `stderr` to [RethinkDB](http://rethinkdb.com/).
 
+![RethinkDB Logo](https://rethinkdb.com/assets/images/docs/api_illustrations/quickstart.png "RethinkDB thinker on the job.")
+
 • Can be used to monitor logs and analytics of your GO application remotely.
 <br />
 
