@@ -1,6 +1,6 @@
 # go-rethinklogger
 
-![GitHub tag](https://github.com/MustansirZia/go-rethinklogger/releases)
+[![GitHub tag](https://img.shields.io/github/tag/GoRethink/gorethink.svg?style=flat)](https://github.com/MustansirZia/go-rethinklogger/releases)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 
