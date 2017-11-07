@@ -30,7 +30,7 @@ func Start(dbAddress, adminPassword string) error {
 }
 
 // StartWithBuffer - Clients call this to start the persisting of logs
-// with a customizable bufferSize.
+// with a customizable buffer size.
 func StartWithBuffer(dbAddress, adminPassword string, bufferSize int) error {
 	session, err := createSession(dbAddress, adminPassword)
 	if err != nil {
