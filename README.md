@@ -4,7 +4,7 @@
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
 
 
-#### go-rethinklogger persists all your logs from `stdio` and `stderr` to [RethinkDB](http://rethinkdb.com/).
+#### go-rethinklogger persists and bundles all your logs from `stdio` and `stderr` to [RethinkDB](http://rethinkdb.com/).
 
 ![RethinkDB Logo](https://rethinkdb.com/assets/images/docs/api_illustrations/quickstart.png "RethinkDB thinker on the job.")
 
