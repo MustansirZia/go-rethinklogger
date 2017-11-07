@@ -98,10 +98,7 @@ func createDB(address, adminPassword string) error {
 		return err
 	}
 	// Create all tables of database.
-	if err := createTables(session); err != nil {
-		return err
-	}
-	return nil
+	return createTables(session)
 }
 
 func createTables(session *r.Session) error {
