@@ -5,10 +5,11 @@ package rethinklogger
  */
 
 import (
-	r "gopkg.in/dancannon/gorethink.v2"
+	"strings"
 	"sync"
 	"time"
-	"strings"
+
+	r "gopkg.in/dancannon/gorethink.v2"
 )
 
 type rethinkWriter struct {
@@ -31,6 +32,7 @@ type rethinkWriter struct {
 	sync.Mutex
 }
 
+// RethinkLog - struct to a hold a single rethink log.
 type RethinkLog struct {
 	Log            string `gorethink:"Log,omitempty"`
 	CreatedAt      int64  `gorethink:"CreatedAt,omitempty"`
@@ -64,13 +66,13 @@ func (writer *rethinkWriter) start() {
 	}
 }
 
-// Only exported function apart from Start() and StartWithBuffer(). Used to Query past logs.
+// QueryLogs - Only exported function apart from Start() and StartWithBuffer(). Used to Query past logs.
 func QueryLogs(dbAddress string, from, to time.Time) ([]RethinkLog, error) {
 	session, err := r.Connect(r.ConnectOpts{
 		Address:  dbAddress,
-		Database: DB_NAME,
-		Username: DB_USER,
-		Password: DB_PASSWORD,
+		Database: dbName,
+		Username: dbUser,
+		Password: dbPassword,
 	})
 	if err != nil {
 		// If rethinklogger.start() wasn't called,
@@ -86,8 +88,8 @@ func QueryLogs(dbAddress string, from, to time.Time) ([]RethinkLog, error) {
 		Ge(from.Unix()).
 		And(r.Row.Field("CreatedAt")).
 		Le(to.Unix())
-	cursor, err := r.DB(DB_NAME).
-		Table(DB_TABLE).
+	cursor, err := r.DB(dbName).
+		Table(dbTable).
 		Filter(filterQuery).
 		OrderBy(r.Desc("CreatedAt")).
 		Run(session)
