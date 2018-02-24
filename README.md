@@ -1,5 +1,6 @@
 # go-rethinklogger
 
+[![Documentation](https://godoc.org/github.com/mustansirzia/go-rethinklogger?status.svg)](http://godoc.org/github.com/mustansirzia/go-rethinklogger)
 [![Go Report Card](https://goreportcard.com/badge/github.com/MustansirZia/go-rethinklogger)](https://goreportcard.com/report/github.com/MustansirZia/go-rethinklogger)
 [![GitHub tag](https://img.shields.io/github/tag/MustansirZia/go-rethinklogger.svg?style=flat)](https://github.com/MustansirZia/go-rethinklogger/releases)
 [![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
