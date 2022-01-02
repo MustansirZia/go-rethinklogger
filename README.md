@@ -112,3 +112,9 @@ By default the value is `1`.
 
 ### License.
 See [License](https://github.com/MustansirZia/go-rethinklogger/blob/master/LICENSE.txt).
+
+### Support.
+
+Support my OSS work by buying me a coffee!
+ 
+<a href="https://www.buymeacoffee.com/MustansirZia" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-blue.png" alt="Buy Me A Pizza" style="height: 60px !important;width: 217px !important;" ></a>
