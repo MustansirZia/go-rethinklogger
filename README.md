@@ -113,6 +113,8 @@ By default the value is `1`.
 ### License.
 See [License](https://github.com/MustansirZia/go-rethinklogger/blob/master/LICENSE.txt).
 
+<br />
+
 ### Support.
 
 Support my OSS work by buying me a coffee!
